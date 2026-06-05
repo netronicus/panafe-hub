@@ -1,4 +1,4 @@
-import { Scale, Clock, FileText, ExternalLink, AlertCircle } from 'lucide-react'
+import { Scale, Clock, FileText, ExternalLink, AlertCircle, Shield } from 'lucide-react'
 
 export function AmparoSection(): JSX.Element {
   return (
@@ -65,6 +65,52 @@ export function AmparoSection(): JSX.Element {
             </div>
           </div>
 
+          <div className="p-5 bg-red-50 border border-red-200 rounded-xl flex items-start gap-4">
+            <Shield className="w-6 h-6 text-mexico-red shrink-0 mt-0.5" aria-hidden="true" />
+            <div>
+              <p className="font-semibold text-gray-900">Derechos constitucionales que podrían verse afectados</p>
+              <p className="mt-1 text-sm text-gray-700">
+                La Constitución reconoce varios derechos que podrían relacionarse con el registro obligatorio:
+              </p>
+              <ul className="mt-2 space-y-2 text-sm text-gray-700">
+                <li className="flex items-start gap-2">
+                  <span className="text-red-600 font-bold">•</span>
+                  <span>
+                    <strong>Artículo 1°:</strong> Todos tenemos derecho a que se respeten nuestros derechos humanos
+                    sin distinción de origen, género, edad o condición social.
+                  </span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-red-600 font-bold">•</span>
+                  <span>
+                    <strong>Artículo 6°:</strong> Toda persona tiene derecho a recibir y difundir información,
+                    así como a acceder a servicios de telecomunicaciones e Internet.
+                  </span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-red-600 font-bold">•</span>
+                  <span>
+                    <strong>Artículo 7°:</strong> Es libre la difusión de opiniones, información e ideas por
+                    cualquier medio. No se puede restringir este derecho por vías indirectas.
+                  </span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-red-600 font-bold">•</span>
+                  <span>
+                    <strong>Artículo 14:</strong> A ninguna ley se le dará efecto retroactivo en perjuicio de persona alguna.
+                  </span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-red-600 font-bold">•</span>
+                  <span>
+                    <strong>Artículo 16:</strong> Toda persona tiene derecho a la protección de sus datos personales,
+                    así como a decidir quién puede conocerlos, usarlos o compartirlos.
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
           <div className="p-5 bg-gray-50 border border-gray-200 rounded-xl flex items-start gap-4">
             <AlertCircle className="w-6 h-6 text-gray-500 shrink-0 mt-0.5" aria-hidden="true" />
             <div>
@@ -77,7 +123,7 @@ export function AmparoSection(): JSX.Element {
             </div>
           </div>
 
-          <div className="text-center pt-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-4">
             <a
               href="https://www.diputados.gob.mx/LeyesBiblio/pdf/LAmp.pdf"
               target="_blank"
@@ -86,6 +132,15 @@ export function AmparoSection(): JSX.Element {
             >
               <ExternalLink className="w-4 h-4" aria-hidden="true" />
               Descargar la Ley de Amparo (PDF)
+            </a>
+            <a
+              href="https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-5 py-2.5 border border-gray-300 text-gray-700 text-sm font-medium rounded-lg hover:bg-gray-50 focus-ring transition-colors"
+            >
+              <ExternalLink className="w-4 h-4" aria-hidden="true" />
+              Descargar la Constitución (PDF)
             </a>
           </div>
         </div>
