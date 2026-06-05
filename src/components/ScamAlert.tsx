@@ -165,7 +165,7 @@ export function ScamAlert(): JSX.Element {
             <div className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm">
               <h3 className="text-lg font-semibold text-gray-900 flex items-center gap-2 mb-4">
                 <Send className="w-5 h-5 text-mexico-green" aria-hidden="true" />
-                Reportar estafa
+                Reportar registro NO reconocido o posible estafa
               </h3>
               <form onSubmit={handleReport} className="space-y-4">
                 <div>
