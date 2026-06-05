@@ -23,7 +23,7 @@ export function AmparoSection(): JSX.Element {
                 <strong>Instituto Federal de Telecomunicaciones (IFT)</strong>, que es la autoridad
                 que regula el registro PANAFE. Si crees que la obligación de vincular tu línea a tu
                 identidad violenta tu derecho a la privacidad, protección de datos personales o
-                cualquier otro derecho reconocido en la Constitución, puedes solicitar amparo.
+                cualquier otro derecho reconocido en la Constitución Política de los Estados Unidos Mexicanos, puedes solicitar amparo.
               </p>
             </div>
           </div>
@@ -70,7 +70,7 @@ export function AmparoSection(): JSX.Element {
             <div>
               <p className="font-semibold text-gray-900">Derechos constitucionales que podrían verse afectados</p>
               <p className="mt-1 text-sm text-gray-700">
-                La Constitución reconoce varios derechos que podrían relacionarse con el registro obligatorio:
+                La Constitución Política de los Estados Unidos Mexicanos reconoce varios derechos que podrían relacionarse con el registro obligatorio:
               </p>
               <ul className="mt-2 space-y-2 text-sm text-gray-700">
                 <li className="flex items-start gap-2">
@@ -148,7 +148,7 @@ export function AmparoSection(): JSX.Element {
               className="inline-flex items-center gap-2 px-5 py-2.5 border border-gray-300 text-gray-700 text-sm font-medium rounded-lg hover:bg-gray-50 focus-ring transition-colors"
             >
               <ExternalLink className="w-4 h-4" aria-hidden="true" />
-              Constitución (PDF)
+              Constitución Política de los Estados Unidos Mexicanos (PDF)
             </a>
           </div>
         </div>
