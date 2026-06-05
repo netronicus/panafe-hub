@@ -101,7 +101,7 @@ export function ScamAlert(): JSX.Element {
   const [providerAddress, setProviderAddress] = useState<string>('')
   const [pattern, setPattern] = useState<string>('')
   const [url, setUrl] = useState<string>('')
-  const [reportType, setReportType] = useState<'fraude' | 'registro-no-reconocido'>('fraude')
+  const [reportType, setReportType] = useState<'fraude' | 'registro-no-reconocido'>('registro-no-reconocido')
   const [showHelp, setShowHelp] = useState<boolean>(false)
 
   const handleProviderChange = (id: string): void => {
@@ -193,8 +193,8 @@ export function ScamAlert(): JSX.Element {
                     required
                     className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-mexico-green focus:border-transparent bg-white"
                   >
-                    <option value="fraude">Intento de fraude</option>
                     <option value="registro-no-reconocido">Registro no reconocido</option>
+                    <option value="fraude">Intento de fraude</option>
                   </select>
                 </div>
 
