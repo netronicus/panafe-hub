@@ -27,7 +27,7 @@ export function ScamAlert(): JSX.Element {
     const body = encodeURIComponent(
       `Patrón detectado:\n${pattern}\n\nURL sospechosa (opcional):\n${url}\n\nFecha del reporte: ${new Date().toLocaleDateString('es-MX')}\n\n---\nReporte enviado desde PANAFE Hub`,
     )
-    window.location.href = `mailto:orientacion@profeco.gob.mx?subject=${subject}&body=${body}`
+    window.location.href = `mailto:denunciasprofeco@profeco.gob.mx?subject=${subject}&body=${body}`
     setPattern('')
     setUrl('')
   }
