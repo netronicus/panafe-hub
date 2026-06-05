@@ -1,0 +1,18 @@
+{
+  "name": "PANAFE Hub - Registro de Líneas Móviles México 2026",
+  "short_name": "PANAFE Hub",
+  "description": "Herramienta informativa para registrar tu línea móvil en el PANAFE antes del 30 de junio de 2026.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color":"#006847",
+  "lang":"es-MX",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
