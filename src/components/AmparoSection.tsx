@@ -125,12 +125,12 @@ export function AmparoSection(): JSX.Element {
 
           <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3 pt-4">
             <a
-              href="./plantilla-amparo-panafe.pdf"
+              href="./plantilla-amparo-panafe.docx"
               download
               className="inline-flex items-center gap-2 px-5 py-2.5 bg-mexico-red text-white text-sm font-medium rounded-lg hover:bg-red-700 focus-ring transition-colors"
             >
               <Download className="w-4 h-4" aria-hidden="true" />
-              Descargar plantilla de amparo (PDF)
+              Descargar plantilla de amparo (Word)
             </a>
             <a
               href="https://www.diputados.gob.mx/LeyesBiblio/pdf/LAmp.pdf"
