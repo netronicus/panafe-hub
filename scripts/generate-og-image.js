@@ -23,32 +23,35 @@ const svg = `<?xml version="1.0" encoding="UTF-8"?>
   <rect x="0" y="16" width="1200" height="8" fill="#CE1126"/>
 
   <!-- Shield icon centered -->
-  <g transform="translate(600, 220)">
+  <g transform="translate(600, 200)">
     <path d="M0,-60 C0,-60 50,-40 50,10 C50,50 0,80 0,80 C0,80 -50,50 -50,10 C-50,-40 0,-60 0,-60 Z" fill="#ffffff" opacity="0.15"/>
     <path d="M0,-50 C0,-50 42,-33 42,8 C42,43 0,70 0,70 C0,70 -42,43 -42,8 C-42,-33 0,-50 0,-50 Z" fill="none" stroke="#ffffff" stroke-width="4" opacity="0.9"/>
     <path d="M-15,-10 L0,5 L15,-20" fill="none" stroke="#B5A642" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
   </g>
 
   <!-- Main title -->
-  <text x="600" y="360" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="72" font-weight="700" fill="#ffffff" letter-spacing="-1">
-    PANAFE Hub
+  <text x="600" y="340" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="52" font-weight="700" fill="#ffffff" letter-spacing="-1">
+    Registro de Líneas Móviles
+  </text>
+  <text x="600" y="400" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="52" font-weight="700" fill="#ffffff" letter-spacing="-1">
+    México 2026
   </text>
 
   <!-- Subtitle -->
-  <text x="600" y="420" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="32" font-weight="500" fill="#b8e6d3">
-    Registro de Líneas Móviles México 2026
+  <text x="600" y="455" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="24" font-weight="500" fill="#b8e6d3">
+    Registro de Usuarios de Telefonía Móvil — IFT
   </text>
 
   <!-- Divider line -->
-  <line x1="450" y1="450" x2="750" y2="450" stroke="#B5A642" stroke-width="2" opacity="0.6"/>
+  <line x1="450" y1="480" x2="750" y2="480" stroke="#B5A642" stroke-width="2" opacity="0.6"/>
 
   <!-- Bottom tagline -->
-  <text x="600" y="500" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="400" fill="#8ccfb8">
+  <text x="600" y="520" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="400" fill="#8ccfb8">
     Enlaces oficiales • Checklist de documentos • Seguimiento gratuito
   </text>
 
   <!-- URL at bottom -->
-  <text x="600" y="580" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="400" fill="#6bb89d">
+  <text x="600" y="580" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="400" fill="#6bb89d">
     panafe-hub.github.io
   </text>
 </svg>`
