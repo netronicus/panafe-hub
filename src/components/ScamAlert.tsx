@@ -114,7 +114,7 @@ export function ScamAlert(): JSX.Element {
     const selectedProvider = providers.find((p) => p.id === providerId)
     const providerName = selectedProvider?.name ?? providerId
 
-    const subject = encodeURIComponent('Reporte de intento de fraude - PANAFE (nombre interno de panafe-hub.localto.net)')
+    const subject = encodeURIComponent('Reporte de intento de fraude - Registro de Usuarios de Telefonía Móvil')
     const body = encodeURIComponent(
       `DATOS DEL DENUNCIANTE\n` +
         `Nombre: ${name}\n` +
@@ -126,8 +126,7 @@ export function ScamAlert(): JSX.Element {
         `${pattern}\n\n` +
         `URL SOSPECHOSA\n` +
         `${url || 'No proporcionada'}\n\n` +
-        `Fecha del reporte: ${new Date().toLocaleDateString('es-MX')}\n\n` +
-        `---\nReporte enviado desde PANAFE (nombre interno del proyecto) Hub`,
+        `Fecha del reporte: ${new Date().toLocaleDateString('es-MX')}`,
     )
     window.location.href = `mailto:denuncias.telecom@profeco.gob.mx?subject=${subject}&body=${body}`
     setName('')
