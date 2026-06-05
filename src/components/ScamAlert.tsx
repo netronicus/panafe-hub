@@ -101,6 +101,7 @@ export function ScamAlert(): JSX.Element {
   const [providerAddress, setProviderAddress] = useState<string>('')
   const [pattern, setPattern] = useState<string>('')
   const [url, setUrl] = useState<string>('')
+  const [reportType, setReportType] = useState<'fraude' | 'registro-no-reconocido'>('fraude')
   const [showHelp, setShowHelp] = useState<boolean>(false)
 
   const handleProviderChange = (id: string): void => {
@@ -114,7 +115,8 @@ export function ScamAlert(): JSX.Element {
     const selectedProvider = providers.find((p) => p.id === providerId)
     const providerName = selectedProvider?.name ?? providerId
 
-    const subject = encodeURIComponent('Reporte de intento de fraude - Registro de Usuarios de Telefonía Móvil')
+    const subjectType = reportType === 'fraude' ? 'intento de fraude' : 'registro no reconocido'
+    const subject = encodeURIComponent(`Reporte de ${subjectType} - Registro de Usuarios de Telefonía Móvil`)
     const body = encodeURIComponent(
       `DATOS DEL DENUNCIANTE\n` +
         `Nombre: ${name}\n` +
@@ -180,6 +182,22 @@ export function ScamAlert(): JSX.Element {
                 Reportar registro NO reconocido o posible estafa
               </h3>
               <form onSubmit={handleReport} className="space-y-4">
+                <div>
+                  <label htmlFor="report-type" className="block text-sm font-medium text-gray-700 mb-1">
+                    Tipo de reporte
+                  </label>
+                  <select
+                    id="report-type"
+                    value={reportType}
+                    onChange={(e) => setReportType(e.target.value as 'fraude' | 'registro-no-reconocido')}
+                    required
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-mexico-green focus:border-transparent bg-white"
+                  >
+                    <option value="fraude">Intento de fraude</option>
+                    <option value="registro-no-reconocido">Registro no reconocido</option>
+                  </select>
+                </div>
+
                 <div>
                   <label htmlFor="reporter-name" className="block text-sm font-medium text-gray-700 mb-1">
                     <span className="flex items-center gap-1.5">
@@ -259,7 +277,7 @@ export function ScamAlert(): JSX.Element {
                     onChange={(e) => setPattern(e.target.value)}
                     required
                     rows={4}
-                    placeholder="Describe detalladamente qué ocurrió: mensaje recibido, número o correo del remitente, qué te pidieron, etc."
+                    placeholder="Describe detalladamente qué ocurrió: mensaje recibido, número o correo del remitente, qué te pidieron, o en caso de registro no reconocido, indica qué línea aparece a tu nombre sin tu autorización."
                     className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-mexico-green focus:border-transparent"
                   />
                 </div>
