@@ -1,4 +1,4 @@
-import { Scale, Clock, FileText, ExternalLink, AlertCircle, Shield } from 'lucide-react'
+import { Scale, Clock, FileText, ExternalLink, AlertCircle, Shield, Download } from 'lucide-react'
 
 export function AmparoSection(): JSX.Element {
   return (
@@ -123,7 +123,15 @@ export function AmparoSection(): JSX.Element {
             </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-4">
+          <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3 pt-4">
+            <a
+              href="./plantilla-amparo-panafe.html"
+              download
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-mexico-red text-white text-sm font-medium rounded-lg hover:bg-red-700 focus-ring transition-colors"
+            >
+              <Download className="w-4 h-4" aria-hidden="true" />
+              Descargar plantilla de amparo
+            </a>
             <a
               href="https://www.diputados.gob.mx/LeyesBiblio/pdf/LAmp.pdf"
               target="_blank"
@@ -131,7 +139,7 @@ export function AmparoSection(): JSX.Element {
               className="inline-flex items-center gap-2 px-5 py-2.5 bg-mexico-green text-white text-sm font-medium rounded-lg hover:bg-emerald-800 focus-ring transition-colors"
             >
               <ExternalLink className="w-4 h-4" aria-hidden="true" />
-              Descargar la Ley de Amparo (PDF)
+              Ley de Amparo (PDF)
             </a>
             <a
               href="https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf"
@@ -140,7 +148,7 @@ export function AmparoSection(): JSX.Element {
               className="inline-flex items-center gap-2 px-5 py-2.5 border border-gray-300 text-gray-700 text-sm font-medium rounded-lg hover:bg-gray-50 focus-ring transition-colors"
             >
               <ExternalLink className="w-4 h-4" aria-hidden="true" />
-              Descargar la Constitución (PDF)
+              Constitución (PDF)
             </a>
           </div>
         </div>
