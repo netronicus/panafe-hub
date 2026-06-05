@@ -46,7 +46,7 @@ src/
 │   └── useLocalStorage.ts # Persistencia tipada en localStorage con manejo de errores
 ├── data/
 │   ├── carriers.ts      # Datos estáticos de 7 operadoras (Telcel, AT&T, Movistar, Bait, Altán, Virgin, Flash)
-│   ├── deadline.ts      # Constante centralizada PANAFE_DEADLINE (2026-06-30T23:59:59-06:00)
+│   ├── deadline.ts      # Constante centralizada REGISTRO_DEADLINE (2026-06-30T23:59:59-06:00)
 │   ├── faq.ts           # 5 preguntas frecuentes con referencia dinámica a la fecha límite
 │   └── scams.ts         # 3 reportes de fraudes conocidos (datos estáticos)
 ├── types/
@@ -116,7 +116,7 @@ Actualmente el proyecto **no tiene tests automatizados**. No hay Jest, Vitest, C
 
 - Si agregas una nueva operadora, actualiza `src/data/carriers.ts` y asegúrate de que `id` sea único. Los campos requeridos son: `id`, `name`, `logo`, `registrationUrl`, `requiredDocuments`, `methods` y `isOfficial`.
 - Si modificas tipos en `src/types/index.ts`, revisa los consumidores en `TrackerContext.tsx` y `RegistrationTracker.tsx`.
-- El deadline del PANAFE está centralizado en `src/data/deadline.ts` (`PANAFE_DEADLINE`, `PANAFE_DEADLINE_LABEL`, `getDaysLeft()`). Si cambia la fecha, actualiza únicamente ese archivo.
+- El deadline del registro está centralizado en `src/data/deadline.ts` (`REGISTRO_DEADLINE`, `REGISTRO_DEADLINE_LABEL`, `getDaysLeft()`). Si cambia la fecha, actualiza únicamente ese archivo.
 - Para nuevos iconos, usa `lucide-react` en lugar de agregar SVG manualmente.
 - El proyecto usa `HashRouter`, por lo que las rutas del lado del cliente se manejan con `#`. No es necesario configurar reescrituras de servidor.
 - El formulario de reporte de estafas en `ScamAlert.tsx` genera un `mailto:` a `orientacion@profeco.gob.mx`; no envía datos a ningún backend.

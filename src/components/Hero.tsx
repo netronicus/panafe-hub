@@ -1,5 +1,5 @@
 import { useCountdown } from '../hooks/useCountdown'
-import { PANAFE_DEADLINE, PANAFE_DEADLINE_LABEL } from '../data/deadline'
+import { REGISTRO_DEADLINE, REGISTRO_DEADLINE_LABEL } from '../data/deadline'
 import { AlertTriangle, Clock, Calendar } from 'lucide-react'
 
 function CountdownUnit({ value, label }: { value: number; label: string }): JSX.Element {
@@ -18,7 +18,7 @@ function CountdownUnit({ value, label }: { value: number; label: string }): JSX.
 }
 
 export function Hero(): JSX.Element {
-  const { days, hours, minutes, seconds, isExpired } = useCountdown(PANAFE_DEADLINE)
+  const { days, hours, minutes, seconds, isExpired } = useCountdown(REGISTRO_DEADLINE)
 
   return (
     <section id="inicio" className="relative bg-gradient-to-br from-mexico-green to-emerald-800 text-white">
@@ -27,11 +27,11 @@ export function Hero(): JSX.Element {
           <div className="space-y-6">
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">
               <Calendar className="w-4 h-4" aria-hidden="true" />
-              <span>Fecha límite: {PANAFE_DEADLINE_LABEL}</span>
+              <span>Fecha límite: {REGISTRO_DEADLINE_LABEL}</span>
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
               Registra tu línea antes del{' '}
-              <span className="text-yellow-300">{PANAFE_DEADLINE_LABEL}</span>
+              <span className="text-yellow-300">{REGISTRO_DEADLINE_LABEL}</span>
             </h1>
             <p className="text-lg sm:text-xl text-emerald-50 max-w-xl">
               Todas las líneas móviles en México deben estar vinculadas a tu CURP. Si eres

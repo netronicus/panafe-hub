@@ -1,12 +1,12 @@
 import type { FAQItem } from '../types'
-import { PANAFE_DEADLINE_LABEL } from './deadline'
+import { REGISTRO_DEADLINE_LABEL } from './deadline'
 
 export const faqItems: FAQItem[] = [
   {
     id: '1',
-    question: `¿Qué pasa si no registro mi línea antes del ${PANAFE_DEADLINE_LABEL}?`,
+    question: `¿Qué pasa si no registro mi línea antes del ${REGISTRO_DEADLINE_LABEL}?`,
     answer:
-      `Si no registras tu línea móvil antes del ${PANAFE_DEADLINE_LABEL}, tu línea será suspendida a partir del 1 de julio de 2026. Esto significa que no podrás hacer ni recibir llamadas, enviar mensajes ni usar datos móviles. Para reactivarla, tendrás que completar el registro.`,
+      `Si no registras tu línea móvil antes del ${REGISTRO_DEADLINE_LABEL}, tu línea será suspendida a partir del 1 de julio de 2026. Esto significa que no podrás hacer ni recibir llamadas, enviar mensajes ni usar datos móviles. Para reactivarla, tendrás que completar el registro.`,
   },
   {
     id: '2',
@@ -22,14 +22,14 @@ export const faqItems: FAQItem[] = [
   },
   {
     id: '4',
-    question: '¿Qué es el PANAFE?',
+    question: '¿Qué es el Registro de Usuarios de Telefonía Móvil?',
     answer:
-      'El PANAFE (Padrón Nacional de Fecha de Alta) es el registro obligatorio de líneas móviles en México. Su objetivo es combatir el delito de extorsión telefónica y mejorar la seguridad de los usuarios.',
+      'El Registro de Usuarios de Telefonía Móvil (también conocido como Registro Nacional de Usuarios de Telecomunicaciones) es el registro obligatorio de líneas móviles en México. Su objetivo es combatir el delito de extorsión telefónica y mejorar la seguridad de los usuarios.',
   },
   {
     id: '5',
     question: '¿Mis datos están seguros?',
     answer:
-      'El PANAFE está regulado por el IFT y las operadoras deben cumplir con la Ley Federal de Protección de Datos Personales en Posesión de los Particulares. Sin embargo, nunca compartas tu información por SMS, correos o enlaces no solicitados. Ve siempre al portal oficial de tu compañía.',
+      'El registro está regulado por el IFT y las operadoras deben cumplir con la Ley Federal de Protección de Datos Personales en Posesión de los Particulares. Sin embargo, nunca compartas tu información por SMS, correos o enlaces no solicitados. Ve siempre al portal oficial de tu compañía.',
   },
 ]
