@@ -6,6 +6,7 @@ import { CarrierDirectory } from './components/CarrierDirectory'
 import { RegistrationTracker } from './components/RegistrationTracker'
 import { DocumentChecklist } from './components/DocumentChecklist'
 import { ScamAlert } from './components/ScamAlert'
+import { AmparoSection } from './components/AmparoSection'
 import { FAQ } from './components/FAQ'
 import { Footer } from './components/Footer'
 
@@ -27,6 +28,7 @@ export default function App(): JSX.Element {
           <RegistrationTracker />
           <DocumentChecklist />
           <ScamAlert />
+          <AmparoSection />
           <FAQ />
         </main>
         <Footer />

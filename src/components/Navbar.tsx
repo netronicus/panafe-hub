@@ -7,6 +7,7 @@ const navLinks = [
   { href: '#seguimiento', label: 'Seguimiento' },
   { href: '#documentos', label: 'Documentos' },
   { href: '#estafas', label: 'Alertas' },
+  { href: '#amparo', label: 'Amparo' },
   { href: '#faq', label: 'Preguntas' },
 ]
 
