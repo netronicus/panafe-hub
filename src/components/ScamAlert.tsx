@@ -9,7 +9,56 @@ import {
   Clock,
   CheckCircle2,
   HelpCircle,
+  User,
+  MapPin,
+  Building2,
+  FileText,
 } from 'lucide-react'
+
+const providers = [
+  {
+    id: 'telcel',
+    name: 'Telcel (Radiomóvil Dipsa, S.A. de C.V.)',
+    address:
+      'Calle Lago Zúrich número 245, Edificio Telcel, Colonia Ampliación Granada, Alcaldía Miguel Hidalgo, C.P. 11529, Ciudad de México, México',
+  },
+  {
+    id: 'att',
+    name: 'AT&T (AT&T Comunicaciones Digitales, S. de R.L. de C.V.)',
+    address:
+      'Avenida Insurgentes Sur #1143, Colonia Nochebuena, Alcaldía Benito Juárez, C.P. 03720, Ciudad de México, México',
+  },
+  {
+    id: 'movistar',
+    name: 'Movistar (Pegaso PCS, S.A. de C.V.)',
+    address:
+      'Prolongación Paseo de la Reforma No. 1200, Piso 14 y 18, Colonia Cruz Manca, Alcaldía Cuajimalpa de Morelos, C.P. 05349, Ciudad de México',
+  },
+  {
+    id: 'bait',
+    name: 'Bait (Wal-Mart Innovación, S. de R.L. de C.V.)',
+    address:
+      'Nextengo 78, Santa Cruz Acayucan, Alcaldía Azcapotzalco, C.P. 02770, Ciudad de México, México',
+  },
+  {
+    id: 'altan',
+    name: 'Altán Redes (Altán Redes, S.A.P.I. de C.V.)',
+    address:
+      'Avenida Juan Salvador Agraz No. 101, Piso 2, Colonia Santa Fe Cuajimalpa, Alcaldía Cuajimalpa de Morelos, C.P. 05348, Ciudad de México, México',
+  },
+  {
+    id: 'virgin',
+    name: 'Virgin Mobile México',
+    address:
+      'Calzada General Mariano Escobedo 526, Piso 10, Colonia Anzures, Alcaldía Miguel Hidalgo, C.P. 11590, Ciudad de México',
+  },
+  {
+    id: 'flash',
+    name: 'Flash Mobile (Logística ACN México)',
+    address:
+      'Avenida Insurgentes Sur número 1602, Piso 10, Oficina 1001, Colonia Crédito Constructor, Alcaldía Benito Juárez, C.P. 03940, Ciudad de México, México',
+  },
+]
 
 function formatDate(iso: string): string {
   const d = new Date(iso)
@@ -17,17 +66,45 @@ function formatDate(iso: string): string {
 }
 
 export function ScamAlert(): JSX.Element {
+  const [name, setName] = useState<string>('')
+  const [address, setAddress] = useState<string>('')
+  const [providerId, setProviderId] = useState<string>('')
+  const [providerAddress, setProviderAddress] = useState<string>('')
   const [pattern, setPattern] = useState<string>('')
   const [url, setUrl] = useState<string>('')
   const [showHelp, setShowHelp] = useState<boolean>(false)
 
+  const handleProviderChange = (id: string): void => {
+    setProviderId(id)
+    const p = providers.find((pr) => pr.id === id)
+    setProviderAddress(p?.address ?? '')
+  }
+
   const handleReport = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault()
+    const selectedProvider = providers.find((p) => p.id === providerId)
+    const providerName = selectedProvider?.name ?? providerId
+
     const subject = encodeURIComponent('Reporte de intento de fraude - PANAFE')
     const body = encodeURIComponent(
-      `Patrón detectado:\n${pattern}\n\nURL sospechosa (opcional):\n${url}\n\nFecha del reporte: ${new Date().toLocaleDateString('es-MX')}\n\n---\nReporte enviado desde PANAFE Hub`,
+      `DATOS DEL DENUNCIANTE\n` +
+        `Nombre: ${name}\n` +
+        `Domicilio: ${address}\n\n` +
+        `PROVEEDOR AFECTADO\n` +
+        `Nombre: ${providerName}\n` +
+        `Domicilio fiscal: ${providerAddress}\n\n` +
+        `DESCRIPCIÓN DE LOS HECHOS\n` +
+        `${pattern}\n\n` +
+        `URL SOSPECHOSA\n` +
+        `${url || 'No proporcionada'}\n\n` +
+        `Fecha del reporte: ${new Date().toLocaleDateString('es-MX')}\n\n` +
+        `---\nReporte enviado desde PANAFE Hub`,
     )
-    window.location.href = `mailto:denunciasprofeco@profeco.gob.mx?subject=${subject}&body=${body}`
+    window.location.href = `mailto:denuncias.telecom@profeco.gob.mx?subject=${subject}&body=${body}`
+    setName('')
+    setAddress('')
+    setProviderId('')
+    setProviderAddress('')
     setPattern('')
     setUrl('')
   }
@@ -92,19 +169,89 @@ export function ScamAlert(): JSX.Element {
               </h3>
               <form onSubmit={handleReport} className="space-y-4">
                 <div>
+                  <label htmlFor="reporter-name" className="block text-sm font-medium text-gray-700 mb-1">
+                    <span className="flex items-center gap-1.5">
+                      <User className="w-4 h-4 text-gray-400" aria-hidden="true" />
+                      Nombre completo del denunciante
+                    </span>
+                  </label>
+                  <input
+                    id="reporter-name"
+                    type="text"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    required
+                    placeholder="Tu nombre completo"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-mexico-green focus:border-transparent"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="reporter-address" className="block text-sm font-medium text-gray-700 mb-1">
+                    <span className="flex items-center gap-1.5">
+                      <MapPin className="w-4 h-4 text-gray-400" aria-hidden="true" />
+                      Domicilio del denunciante
+                    </span>
+                  </label>
+                  <input
+                    id="reporter-address"
+                    type="text"
+                    value={address}
+                    onChange={(e) => setAddress(e.target.value)}
+                    required
+                    placeholder="Calle, número, colonia, ciudad, código postal"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-mexico-green focus:border-transparent"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="provider" className="block text-sm font-medium text-gray-700 mb-1">
+                    <span className="flex items-center gap-1.5">
+                      <Building2 className="w-4 h-4 text-gray-400" aria-hidden="true" />
+                      Proveedor afectado
+                    </span>
+                  </label>
+                  <select
+                    id="provider"
+                    value={providerId}
+                    onChange={(e) => handleProviderChange(e.target.value)}
+                    required
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-mexico-green focus:border-transparent bg-white"
+                  >
+                    <option value="">Selecciona una compañía...</option>
+                    {providers.map((p) => (
+                      <option key={p.id} value={p.id}>
+                        {p.name}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                {providerAddress && (
+                  <div className="p-3 bg-gray-50 border border-gray-200 rounded-lg">
+                    <p className="text-xs font-semibold text-gray-700 mb-1">Domicilio fiscal del proveedor:</p>
+                    <p className="text-xs text-gray-600 leading-relaxed">{providerAddress}</p>
+                  </div>
+                )}
+
+                <div>
                   <label htmlFor="pattern" className="block text-sm font-medium text-gray-700 mb-1">
-                    ¿Qué mensaje o patrón detectaste?
+                    <span className="flex items-center gap-1.5">
+                      <FileText className="w-4 h-4 text-gray-400" aria-hidden="true" />
+                      Descripción detallada de los hechos
+                    </span>
                   </label>
                   <textarea
                     id="pattern"
                     value={pattern}
                     onChange={(e) => setPattern(e.target.value)}
                     required
-                    rows={3}
-                    placeholder="Ej. Recibí un SMS diciendo que mi línea se suspendiría hoy..."
+                    rows={4}
+                    placeholder="Describe detalladamente qué ocurrió: mensaje recibido, número o correo del remitente, qué te pidieron, etc."
                     className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-mexico-green focus:border-transparent"
                   />
                 </div>
+
                 <div>
                   <label htmlFor="scam-url" className="block text-sm font-medium text-gray-700 mb-1">
                     URL sospechosa (opcional)
@@ -118,6 +265,7 @@ export function ScamAlert(): JSX.Element {
                     className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-mexico-green focus:border-transparent"
                   />
                 </div>
+
                 <button
                   type="submit"
                   className="inline-flex items-center gap-2 px-5 py-2.5 bg-mexico-green text-white text-sm font-medium rounded-lg hover:bg-emerald-800 focus-ring transition-colors"
