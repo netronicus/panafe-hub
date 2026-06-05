@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { ChevronDown, ExternalLink, BookOpen } from 'lucide-react'
 import { faqItems } from '../data/faq'
+import { renderWithPanaFe } from './PanaFeText'
 
 export function FAQ(): JSX.Element {
   const [openId, setOpenId] = useState<string | null>(null)
@@ -38,7 +39,7 @@ export function FAQ(): JSX.Element {
                   aria-controls={panelId}
                 >
                   <span className="text-sm sm:text-base font-semibold text-gray-900">
-                    {item.question}
+                    {renderWithPanaFe(item.question)}
                   </span>
                   <ChevronDown
                     className={`w-5 h-5 text-gray-500 shrink-0 transition-transform ${
@@ -50,7 +51,7 @@ export function FAQ(): JSX.Element {
                 {isOpen && (
                   <div id={panelId} className="px-5 pb-5" role="region">
                     <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
-                      {item.answer}
+                      {renderWithPanaFe(item.answer)}
                     </p>
                   </div>
                 )}

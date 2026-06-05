@@ -5,6 +5,7 @@ import { Hero } from './components/Hero'
 import { CarrierDirectory } from './components/CarrierDirectory'
 import { RegistrationTracker } from './components/RegistrationTracker'
 import { DocumentChecklist } from './components/DocumentChecklist'
+import { NamingClarification } from './components/NamingClarification'
 import { ScamAlert } from './components/ScamAlert'
 import { AmparoSection } from './components/AmparoSection'
 import { FAQ } from './components/FAQ'
@@ -24,6 +25,7 @@ export default function App(): JSX.Element {
         <Navbar />
         <main className="flex-1">
           <Hero />
+          <NamingClarification />
           <CarrierDirectory />
           <RegistrationTracker />
           <DocumentChecklist />

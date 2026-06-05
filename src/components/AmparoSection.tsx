@@ -1,4 +1,5 @@
 import { Scale, Clock, FileText, ExternalLink, AlertCircle, Shield, Download } from 'lucide-react'
+import { PanaFeLink } from './PanaFeLink'
 
 export function AmparoSection(): JSX.Element {
   return (
@@ -21,7 +22,7 @@ export function AmparoSection(): JSX.Element {
               <p className="mt-1 text-sm text-gray-700">
                 Sí. La Ley de Amparo permite impugnar actos y decisiones del{' '}
                 <strong>Instituto Federal de Telecomunicaciones (IFT)</strong>, que es la autoridad
-                que regula el registro PANAFE. Si crees que la obligación de vincular tu línea a tu
+                que regula el registro <PanaFeLink />. Si crees que la obligación de vincular tu línea a tu
                 identidad violenta tu derecho a la privacidad, protección de datos personales o
                 cualquier otro derecho reconocido en la Constitución Política de los Estados Unidos Mexicanos, puedes solicitar amparo.
               </p>

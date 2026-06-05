@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Menu, X, Shield } from 'lucide-react'
+import { PanaFeLink } from './PanaFeLink'
 
 const navLinks = [
   { href: '#inicio', label: 'Inicio' },
@@ -33,7 +34,7 @@ export function Navbar(): JSX.Element {
             className="flex items-center gap-2 text-mexico-green font-bold text-lg focus-ring rounded-md"
           >
             <Shield className="w-6 h-6" aria-hidden="true" />
-            <span>PANAFE Hub</span>
+            <span className="flex items-center gap-1"><PanaFeLink /> Hub</span>
           </a>
 
           <div className="hidden md:flex items-center gap-1">

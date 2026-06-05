@@ -9,6 +9,7 @@ import {
   AlertTriangle,
 } from 'lucide-react'
 import { carriers, documentLabels, methodLabels } from '../data/carriers'
+import { PanaFeLink } from './PanaFeLink'
 
 function CarrierLogoPlaceholder({ name }: { name: string }): JSX.Element {
   const initials = name
@@ -45,7 +46,7 @@ export function CarrierDirectory(): JSX.Element {
             Directorio de Operadoras
           </h2>
           <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-            Selecciona tu compañía y ve directamente a su portal oficial de registro PANAFE.
+            Selecciona tu compañía y ve directamente a su portal oficial de registro <PanaFeLink />.
           </p>
         </div>
 

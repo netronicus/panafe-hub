@@ -14,6 +14,7 @@ import {
   MessageCircle,
   Eye,
 } from 'lucide-react'
+import { PanaFeLink } from './PanaFeLink'
 
 const providers = [
   {
@@ -77,7 +78,7 @@ const scamDetectionTips = [
     icon: <CreditCard className="w-5 h-5 text-red-600" aria-hidden="true" />,
     title: 'Te piden dinero para "registrar"',
     description:
-      'El registro en el PANAFE es gratuito. Ninguna operadora ni el IFT te cobrará por este trámite. Si te piden pago, es una estafa.',
+      'El registro en el <PanaFeLink /> es gratuito. Ninguna operadora ni el IFT te cobrará por este trámite. Si te piden pago, es una estafa.',
   },
   {
     icon: <MessageCircle className="w-5 h-5 text-red-600" aria-hidden="true" />,
@@ -89,7 +90,7 @@ const scamDetectionTips = [
     icon: <Eye className="w-5 h-5 text-red-600" aria-hidden="true" />,
     title: 'Te piden datos sensibles',
     description:
-      'Nunca compartas tu NIP, contraseña, número de tarjeta o claves bancarias. El registro PANAFE solo requiere CURP, INE o pasaporte, nunca datos financieros.',
+      'Nunca compartas tu NIP, contraseña, número de tarjeta o claves bancarias. El registro <PanaFeLink /> solo requiere CURP, INE o pasaporte, nunca datos financieros.',
   },
 ]
 
@@ -113,7 +114,7 @@ export function ScamAlert(): JSX.Element {
     const selectedProvider = providers.find((p) => p.id === providerId)
     const providerName = selectedProvider?.name ?? providerId
 
-    const subject = encodeURIComponent('Reporte de intento de fraude - PANAFE')
+    const subject = encodeURIComponent('Reporte de intento de fraude - PANAFE (nombre interno de panafe-hub.github.io)')
     const body = encodeURIComponent(
       `DATOS DEL DENUNCIANTE\n` +
         `Nombre: ${name}\n` +
@@ -126,7 +127,7 @@ export function ScamAlert(): JSX.Element {
         `URL SOSPECHOSA\n` +
         `${url || 'No proporcionada'}\n\n` +
         `Fecha del reporte: ${new Date().toLocaleDateString('es-MX')}\n\n` +
-        `---\nReporte enviado desde PANAFE Hub`,
+        `---\nReporte enviado desde PANAFE (nombre interno del proyecto) Hub`,
     )
     window.location.href = `mailto:denuncias.telecom@profeco.gob.mx?subject=${subject}&body=${body}`
     setName('')
@@ -145,7 +146,7 @@ export function ScamAlert(): JSX.Element {
             Reportes y detección de Estafas
           </h2>
           <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-            Aprende a detectar intentos de fraude relacionados con el registro PANAFE y reporta los que encuentres.
+            Aprende a detectar intentos de fraude relacionados con el registro <PanaFeLink /> y reporta los que encuentres.
           </p>
         </div>
 
