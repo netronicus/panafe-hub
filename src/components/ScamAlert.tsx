@@ -1,19 +1,18 @@
 import { useState } from 'react'
-import { scamReports } from '../data/scams'
 import {
   AlertTriangle,
   Send,
-  ShieldAlert,
-  MessageSquareWarning,
-  Link as LinkIcon,
-  Clock,
-  CheckCircle2,
   HelpCircle,
   ExternalLink,
   User,
   MapPin,
   Building2,
   FileText,
+  Smartphone,
+  Globe,
+  CreditCard,
+  MessageCircle,
+  Eye,
 } from 'lucide-react'
 
 const providers = [
@@ -61,10 +60,38 @@ const providers = [
   },
 ]
 
-function formatDate(iso: string): string {
-  const d = new Date(iso)
-  return d.toLocaleDateString('es-MX', { day: 'numeric', month: 'short', year: 'numeric' })
-}
+const scamDetectionTips = [
+  {
+    icon: <Smartphone className="w-5 h-5 text-red-600" aria-hidden="true" />,
+    title: 'SMS o llamadas falsas',
+    description:
+      'Te llega un mensaje o llamada diciendo que tu línea será suspendida "hoy" o en "24 horas" si no actualizas tus datos. Las operadoras y el IFT nunca te contactan por SMS para exigir registro.',
+  },
+  {
+    icon: <Globe className="w-5 h-5 text-red-600" aria-hidden="true" />,
+    title: 'Sitios web falsos',
+    description:
+      'Te envían un enlace que parece el portal de tu compañía, pero el dominio tiene errores ortográficos, números extraños o no usa "https". Verifica siempre la URL directamente en el sitio oficial.',
+  },
+  {
+    icon: <CreditCard className="w-5 h-5 text-red-600" aria-hidden="true" />,
+    title: 'Te piden dinero para "registrar"',
+    description:
+      'El registro en el PANAFE es gratuito. Ninguna operadora ni el IFT te cobrará por este trámite. Si te piden pago, es una estafa.',
+  },
+  {
+    icon: <MessageCircle className="w-5 h-5 text-red-600" aria-hidden="true" />,
+    title: 'Mensajes por WhatsApp o redes sociales',
+    description:
+      'Te escriben ofreciendo ayuda para registrar tu línea "rápido y fácil" a cambio de tus datos personales o bancarios. El registro oficial solo se hace en los portales de las operadoras.',
+  },
+  {
+    icon: <Eye className="w-5 h-5 text-red-600" aria-hidden="true" />,
+    title: 'Te piden datos sensibles',
+    description:
+      'Nunca compartas tu NIP, contraseña, número de tarjeta o claves bancarias. El registro PANAFE solo requiere CURP, INE o pasaporte, nunca datos financieros.',
+  },
+]
 
 export function ScamAlert(): JSX.Element {
   const [name, setName] = useState<string>('')
@@ -114,48 +141,32 @@ export function ScamAlert(): JSX.Element {
     <section id="estafas" className="py-16 sm:py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">Alertas de Estafas</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
+            Reportes y detección de Estafas
+          </h2>
           <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-            Conoce los patrones de fraude más comunes y reporta intentos de phishing.
+            Aprende a detectar intentos de fraude relacionados con el registro PANAFE y reporta los que encuentres.
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-8">
           <div className="space-y-4">
             <h3 className="text-lg font-semibold text-gray-900 flex items-center gap-2">
-              <ShieldAlert className="w-5 h-5 text-mexico-red" aria-hidden="true" />
-              Reportes recientes
+              <AlertTriangle className="w-5 h-5 text-mexico-red" aria-hidden="true" />
+              Cómo detectar una estafa
             </h3>
-            {scamReports.map((report) => (
+            {scamDetectionTips.map((tip, idx) => (
               <div
-                key={report.id}
+                key={idx}
                 className="bg-white rounded-xl border border-gray-200 p-5 shadow-sm"
               >
                 <div className="flex items-start gap-3">
-                  <MessageSquareWarning
-                    className="w-5 h-5 text-amber-600 shrink-0 mt-0.5"
-                    aria-hidden="true"
-                  />
+                  <div className="shrink-0 mt-0.5">{tip.icon}</div>
                   <div className="flex-1">
-                    <p className="text-sm text-gray-800">{report.pattern}</p>
-                    {report.fakeUrl && (
-                      <div className="mt-2 flex items-center gap-2 text-xs text-red-700 bg-red-50 border border-red-100 rounded-md px-3 py-2">
-                        <LinkIcon className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
-                        <span className="break-all">{report.fakeUrl}</span>
-                      </div>
-                    )}
-                    <div className="mt-3 flex items-center gap-3 text-xs text-gray-500">
-                      <span className="flex items-center gap-1">
-                        <Clock className="w-3.5 h-3.5" aria-hidden="true" />
-                        {formatDate(report.reportedAt)}
-                      </span>
-                      {report.isVerified && (
-                        <span className="inline-flex items-center gap-1 text-emerald-700 bg-emerald-50 border border-emerald-200 rounded-full px-2 py-0.5">
-                          <CheckCircle2 className="w-3 h-3" aria-hidden="true" />
-                          Verificado
-                        </span>
-                      )}
-                    </div>
+                    <p className="text-sm font-semibold text-gray-900">{tip.title}</p>
+                    <p className="text-sm text-gray-700 mt-1 leading-relaxed">
+                      {tip.description}
+                    </p>
                   </div>
                 </div>
               </div>
