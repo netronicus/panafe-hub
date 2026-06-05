@@ -1,4 +1,4 @@
-import { Shield, Coffee, ExternalLink } from 'lucide-react'
+import { Shield, ExternalLink } from 'lucide-react'
 import { PanaFeLink } from './PanaFeLink'
 import { PrivacyNotice } from './PrivacyNotice'
 
@@ -13,16 +13,6 @@ export function Footer(): JSX.Element {
           </div>
           <div className="flex flex-wrap items-center gap-4">
             <PrivacyNotice />
-            <a
-              href="https://buymeacoffee.com/netron"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-sm text-amber-400 hover:text-amber-300 transition-colors focus-ring rounded"
-              aria-label="Apoya este proyecto en Buy Me a Coffee"
-            >
-              <Coffee className="w-4 h-4" aria-hidden="true" />
-              <span>Apóyanos con un café</span>
-            </a>
             <span className="text-sm text-gray-400">
               © {new Date().getFullYear()} <PanaFeLink className="text-gray-400 hover:text-gray-300" /> Hub. Herramienta informativa independiente.
             </span>

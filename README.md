@@ -72,14 +72,6 @@ Este sitio es una herramienta informativa **independiente**. No está afiliado a
 
 ---
 
-## ☕ Apoya el proyecto
-
-Si esta herramienta te fue útil, considera apoyar su desarrollo:
-
-[![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-FFDD00?style=flat&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/netron)
-
----
-
 ## 📄 Licencia
 
 Proyecto de código abierto. Puedes usarlo, modificarlo y distribuirlo libremente.
