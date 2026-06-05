@@ -9,7 +9,7 @@ export function Footer(): JSX.Element {
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
           <div className="flex items-center gap-2 text-white font-bold text-lg">
             <Shield className="w-6 h-6" aria-hidden="true" />
-            <span className="flex items-center gap-1"><PanaFeLink /> Hub</span>
+            <span className="flex items-center gap-1"><PanaFeLink className="text-white hover:text-gray-200" /> Hub</span>
           </div>
           <div className="flex flex-wrap items-center gap-4">
             <PrivacyNotice />
@@ -24,7 +24,7 @@ export function Footer(): JSX.Element {
               <span>Apóyanos con un café</span>
             </a>
             <span className="text-sm text-gray-400">
-              © {new Date().getFullYear()} <PanaFeLink /> Hub. Herramienta informativa independiente.
+              © {new Date().getFullYear()} <PanaFeLink className="text-gray-400 hover:text-gray-300" /> Hub. Herramienta informativa independiente.
             </span>
           </div>
         </div>
@@ -33,7 +33,7 @@ export function Footer(): JSX.Element {
           <div className="flex items-start gap-3 p-4 bg-gray-800/50 rounded-lg border border-gray-700">
             <span className="text-amber-400 font-bold text-sm shrink-0">Nota:</span>
             <p className="text-sm text-gray-400 leading-relaxed">
-              <PanaFeLink /> es un nombre interno de este proyecto. Consulta el proceso oficial en:{" "}
+              <PanaFeLink className="text-gray-400 hover:text-gray-300" /> es un nombre interno de este proyecto. Consulta el proceso oficial en:{" "}
               <a
                 href="https://www.ift.org.mx"
                 target="_blank"

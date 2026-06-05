@@ -34,7 +34,7 @@ export function Navbar(): JSX.Element {
             className="flex items-center gap-2 text-mexico-green font-bold text-lg focus-ring rounded-md"
           >
             <Shield className="w-6 h-6" aria-hidden="true" />
-            <span className="flex items-center gap-1"><PanaFeLink /> Hub</span>
+            <span className="flex items-center gap-1"><PanaFeLink className="text-mexico-green hover:text-emerald-800" tooltipPosition="bottom" /> Hub</span>
           </a>
 
           <div className="hidden md:flex items-center gap-1">
