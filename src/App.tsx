@@ -1,5 +1,6 @@
 import { HashRouter, Routes, Route } from 'react-router-dom'
 import { HelmetProvider } from 'react-helmet-async'
+import { GTagTracker } from './seo/GTagTracker'
 import {
   HomePage,
   RegistroTelcelPage,
@@ -16,6 +17,7 @@ export default function App(): JSX.Element {
   return (
     <HelmetProvider>
       <HashRouter>
+        <GTagTracker />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/registro-telcel" element={<RegistroTelcelPage />} />
