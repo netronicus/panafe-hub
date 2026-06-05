@@ -114,7 +114,7 @@ export function ScamAlert(): JSX.Element {
     const selectedProvider = providers.find((p) => p.id === providerId)
     const providerName = selectedProvider?.name ?? providerId
 
-    const subject = encodeURIComponent('Reporte de intento de fraude - PANAFE (nombre interno de panafe-hub.github.io)')
+    const subject = encodeURIComponent('Reporte de intento de fraude - PANAFE (nombre interno de panafe-hub.localto.net)')
     const body = encodeURIComponent(
       `DATOS DEL DENUNCIANTE\n` +
         `Nombre: ${name}\n` +

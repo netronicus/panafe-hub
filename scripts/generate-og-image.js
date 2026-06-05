@@ -52,7 +52,7 @@ const svg = `<?xml version="1.0" encoding="UTF-8"?>
 
   <!-- URL at bottom -->
   <text x="600" y="580" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="400" fill="#6bb89d">
-    panafe-hub.github.io
+    panafe-hub.localto.net
   </text>
 </svg>`
 

@@ -4,7 +4,7 @@
 
 PANAFE Hub es una aplicación web independiente de página única (SPA) que ayuda a usuarios en México a comprender y cumplir con el registro obligatorio de líneas móviles en el PANAFE. La aplicación no tiene backend ni servidor propio; todos los datos personales se almacenan exclusivamente en el Almacenamiento Local del navegador.
 
-🔗 **Sitio en vivo:** [https://panafe-hub.github.io/](https://panafe-hub.github.io/)
+🔗 **Sitio en vivo:** [https://panafe-hub.localto.net/](https://panafe-hub.localto.net/)
 
 ---
 

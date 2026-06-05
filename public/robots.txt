@@ -6,4 +6,4 @@ Disallow: /scripts/
 
 Crawl-delay: 1
 
-Sitemap: https://panafe-hub.github.io/sitemap.xml
+Sitemap: https://panafe-hub.localto.net/sitemap.xml
