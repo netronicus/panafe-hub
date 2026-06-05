@@ -10,7 +10,7 @@ function CountdownUnit({ value, label }: { value: number; label: string }): JSX.
           {value.toString().padStart(2, '0')}
         </span>
       </div>
-      <span className="mt-2 text-xs sm:text-sm font-medium text-gray-600 uppercase tracking-wide">
+      <span className="mt-2 text-xs sm:text-sm font-medium text-white uppercase tracking-wide">
         {label}
       </span>
     </div>

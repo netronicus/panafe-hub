@@ -132,7 +132,7 @@ export function RegistrationTracker(): JSX.Element {
           </p>
           <div className="mt-3 inline-flex items-center gap-2 text-sm text-emerald-700 bg-emerald-50 border border-emerald-200 rounded-full px-4 py-1.5">
             <ShieldCheck className="w-4 h-4" aria-hidden="true" />
-            <span>Sin conexión a servidores. Solo localStorage.</span>
+            <span>Sin conexión a servidores. Solo Almacenamiento Local.</span>
           </div>
         </div>
 
