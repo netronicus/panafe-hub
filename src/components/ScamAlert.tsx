@@ -9,6 +9,7 @@ import {
   Clock,
   CheckCircle2,
   HelpCircle,
+  ExternalLink,
   User,
   MapPin,
   Building2,
@@ -274,6 +275,18 @@ export function ScamAlert(): JSX.Element {
                   Generar reporte por correo
                 </button>
               </form>
+
+              <div className="mt-5 pt-5 border-t border-gray-200">
+                <a
+                  href="https://www.ift.org.mx/usuarios-y-audiencias/levanta-tu-queja-soy-usuario"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm text-mexico-green hover:text-emerald-800 hover:underline focus-ring rounded"
+                >
+                  <ExternalLink className="w-4 h-4" aria-hidden="true" />
+                  Reporta tu queja directamente al Instituto Federal de Telecomunicaciones
+                </a>
+              </div>
             </div>
 
             <div className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm">
