@@ -1,3 +1,9 @@
 User-agent: *
 Allow: /
+Disallow: /dist/
+Disallow: /node_modules/
+Disallow: /scripts/
+
+Crawl-delay: 1
+
 Sitemap: https://panafe-hub.github.io/sitemap.xml

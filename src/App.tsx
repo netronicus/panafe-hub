@@ -1,4 +1,3 @@
-import { Helmet } from 'react-helmet-async'
 import { TrackerProvider } from './context/TrackerContext'
 import { Navbar } from './components/Navbar'
 import { Hero } from './components/Hero'
@@ -14,13 +13,6 @@ import { Footer } from './components/Footer'
 export default function App(): JSX.Element {
   return (
     <TrackerProvider>
-      <Helmet>
-        <title>PANAFE Hub - Registro de Líneas Móviles México 2026</title>
-        <meta
-          name="description"
-          content="Herramienta informativa para registrar tu línea móvil en el PANAFE antes del 30 de junio de 2026. Enlaces oficiales, checklist de documentos y seguimiento de registro."
-        />
-      </Helmet>
       <div className="min-h-screen flex flex-col">
         <Navbar />
         <main className="flex-1">
